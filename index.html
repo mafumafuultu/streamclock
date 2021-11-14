@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>desin_timer</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="./main.js"></script>
+	<script>
+const up = el => {
+	(t => el.innerHTML = `<div><time id="time" data-time="${t.h}:${t.m}">${t.h}:${t.m}</time><hr><div id="dayweek"><time id="day">${t.M}/${t.D}</time> <span id="week">${t.W}</span></div></div>`)(time());
+	setTimeout(() => up(el), 1000);
+};
+onload().then(() => up(document.getElementById('clock')));
+	</script>
+</head>
+<body>
+	<!--
+	class="~"
+		warabe
+		lilith
+		kirara
+		momo
+		nia
+	 -->
+	<div id="clock" class=""></div>
+</body>
+</html>

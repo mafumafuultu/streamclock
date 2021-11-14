@@ -1,0 +1,91 @@
+:root {
+	--textcolor: #666666;
+	--bgcolor: white;
+	--daycolor: #666666;
+	--weekcolor: #666666;
+}
+html,body{margin:0;padding:0;}
+body {
+	display: grid;
+	grid-template-columns: 1fr auto 1fr;
+}
+.warabe {
+	--textcolor: #d43c3c;
+	--bgcolor: #ffdda3;
+	--daycolor: #8f70ba;
+	--weekcolor: #8f70ba;
+}
+.lilith {
+	--textcolor: #feb700;
+    --bgcolor: #30325b;
+    --daycolor: #ff8292;
+	--weekcolor: #ff8292;
+}
+.kirara {
+	--textcolor: #e13168;
+	--bgcolor: #e7a0c0;
+	--daycolor: #872b34;
+	--weekcolor: #872b34;
+}
+.momo {
+	--textcolor: #ff98be;
+	--bgcolor: #ffdaf1;
+	--daycolor: #efbd4a;
+	--weekcolor: #99dbf1;
+}
+.nia {
+	--textcolor: #fdb1de;
+	--bgcolor: #fddbf1;
+	--daycolor: #8dd9fc;
+	--weekcolor: #c6cbf3;
+}
+#clock {
+	color: var(--textcolor);
+	grid-column: 2;
+	font-weight: bold;
+	background-color: var(--bgcolor);
+	width: 200px;
+	padding: 0.5rem 0;
+	text-align: center;
+	border-radius: 4px;
+	text-stroke:0.5px #fdfcfe;
+	-webkit-text-stroke: 0.5px #fdfcfe;
+}
+
+#clock.warabe {
+	background: linear-gradient(to bottom, #ffdda3 0, #ffdda3 100px, #dacde7 100px, #dacde7 125px, #ffc8c1 125px, #ffc8c1 150px);
+	text-shadow: #fdfcfe 1px 1px, #fdfcfe 1px -1px, #fdfcfe -1px 1px, #fdfcfe -1px -1px,
+				#fdfcfe 0px 1px, #fdfcfe 0px -1px, #fdfcfe -1px 0px, #fdfcfe 1px 0px;
+}
+#clock.lilith {
+	text-shadow: #fdfcfe 1px 1px, #fdfcfe 1px -1px, #fdfcfe -1px 1px, #fdfcfe -1px -1px,
+				#fdfcfe 0px 1px, #fdfcfe 0px -1px, #fdfcfe -1px 0px, #fdfcfe 1px 0px;
+
+}
+#clock.kirara {	background: linear-gradient(to top right, #c2c6ec 16px, #f890ab);}
+#clock.momo {
+	text-shadow: #fdfcfe 1px 1px, #fdfcfe 1px -1px, #fdfcfe -1px 1px, #fdfcfe -1px -1px,
+				#fdfcfe 0px 1px, #fdfcfe 0px -1px, #fdfcfe -1px 0px, #fdfcfe 1px 0px;
+}
+#clock.nia {
+	text-stroke:0.5px #9ea6e4;
+	-webkit-text-stroke: 0.5px #9ea6e4;
+	text-shadow: white 4px 4px, white 4px -4px, white -4px 4px, white -4px -4px,
+				white 0px 4px, white 0px -4px, white -4px 0px, white 4px 0px;
+}
+
+.kirara #time {
+	color: transparent;
+	background: linear-gradient(#d353b1 16px, #ef2b69);
+	background-clip: text;
+	-webkit-background-clip: text;
+	text-fill-color: transparent;
+	-webkit-text-fill-color: transparent;
+}
+#time {font-size: 3.5rem;}
+hr {margin: 0.2rem;border: 1px solid var(--textcolor);}
+#dayweek {font-size: 2rem; color: var(--daycolor);}
+#day {color: var(--daycolor);}
+#week {color: var(--weekcolor);}
+
+
