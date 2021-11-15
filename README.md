@@ -3,7 +3,19 @@
 ![](https://img.shields.io/static/v1?label=LICENSE&message=MIT&color=blue)
 
 
+## Demo
+[default](https://mafumafuultu.github.io/streamclock/)  
+[warabe](https://mafumafuultu.github.io/streamclock/?theme=warabe)  
+[lilith](https://mafumafuultu.github.io/streamclock/?theme=lilith)  
+[kirara](https://mafumafuultu.github.io/streamclock/?theme=kirara)  
+[momo](https://mafumafuultu.github.io/streamclock/?theme=momo)  
+[nia](https://mafumafuultu.github.io/streamclock/?theme=nia)  
+
+`https://mafumafuultu.github.io/streamclock/?theme=~~~~`
+
+## DL
 [DOWNLOAD](https://github.com/mafumafuultu/streamclock/archive/refs/heads/main.zip)
+
 
 ![](./sample.jpg)
 
