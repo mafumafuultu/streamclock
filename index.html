@@ -14,7 +14,7 @@ onload().then(() => {
 	let u = new URLSearchParams(location.search);
 	let t = u.get('theme');
 	let el = document.getElementById('clock');
-	el.className = t == null ? '' : t;
+	t != null ? el.className = t : void 0;
 	up(el);
 });
 	</script>
