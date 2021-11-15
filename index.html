@@ -10,7 +10,13 @@ const up = el => {
 	(t => el.innerHTML = `<div><time id="time" data-time="${t.h}:${t.m}">${t.h}:${t.m}</time><hr><div id="dayweek"><time id="day">${t.M}/${t.D}</time> <span id="week">${t.W}</span></div></div>`)(time());
 	setTimeout(() => up(el), 1000);
 };
-onload().then(() => up(document.getElementById('clock')));
+onload().then(() => {
+	let u = new URLSearchParams(location.search);
+	let t = u.get('theme');
+	let el = document.getElementById('clock');
+	el.className = t == null ? '' : t;
+	up(el);
+});
 	</script>
 </head>
 <body>
