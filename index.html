@@ -7,7 +7,7 @@
 	<script src="./main.js"></script>
 	<script>
 const up = el => {
-	(t => el.innerHTML = `<div><time id="time" data-time="${t.h}:${t.m}">${t.h}:${t.m}</time><hr><div id="dayweek"><time id="day">${t.M}/${t.D}</time> <span id="week">${t.W}</span></div></div>`)(time());
+	(t => el.innerHTML = `<div><time id="time" data-time="${t.h}:${t.m}">${t.h}:${t.m}</time><hr><div id="dayweek"><time id="day" data-day="${t.M}/${t.D}">${t.M}/${t.D}</time> <span id="week" data-week="${t.W}">${t.W}</span></div></div>`)(time());
 	setTimeout(() => up(el), 1000);
 };
 onload().then(() => {

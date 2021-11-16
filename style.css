@@ -28,16 +28,16 @@ body {
 	--weekcolor: #872b34;
 }
 .momo {
-	--textcolor: #ff98be;
+	--textcolor: #fe9abe;
 	--bgcolor: #ffdaf1;
-	--daycolor: #efbd4a;
-	--weekcolor: #99dbf1;
+	--daycolor: #f0ca77;
+	--weekcolor: #6bcde8;
 }
 .nia {
-	--textcolor: #fdb1de;
-	--bgcolor: #fddbf1;
-	--daycolor: #8dd9fc;
-	--weekcolor: #c6cbf3;
+	--textcolor: #fdb9e0;
+	--bgcolor: #fedcf2;
+	--daycolor: #8bdbfd;
+	--weekcolor: #cdc1ff;
 }
 #clock {
 	color: var(--textcolor);
@@ -48,44 +48,68 @@ body {
 	padding: 0.5rem 0;
 	text-align: center;
 	border-radius: 4px;
-	text-stroke:0.5px #fdfcfe;
+	text-stroke: 0.5px #fdfcfe;
 	-webkit-text-stroke: 0.5px #fdfcfe;
 }
 
-#clock.warabe {
-	background: linear-gradient(to bottom, #ffdda3 0, #ffdda3 100px, #dacde7 100px, #dacde7 125px, #ffc8c1 125px, #ffc8c1 150px);
-	text-shadow: #fdfcfe 1px 1px, #fdfcfe 1px -1px, #fdfcfe -1px 1px, #fdfcfe -1px -1px,
-				#fdfcfe 0px 1px, #fdfcfe 0px -1px, #fdfcfe -1px 0px, #fdfcfe 1px 0px;
-}
-#clock.lilith {
-	text-shadow: #fdfcfe 1px 1px, #fdfcfe 1px -1px, #fdfcfe -1px 1px, #fdfcfe -1px -1px,
-				#fdfcfe 0px 1px, #fdfcfe 0px -1px, #fdfcfe -1px 0px, #fdfcfe 1px 0px;
+#clock.warabe {background: linear-gradient(to bottom, #ffdda3 0, #ffdda3 100px, #dacde7 100px, #dacde7 125px, #ffc8c1 125px, #ffc8c1 150px);}
+#clock.lilith {}
+#clock.kirara {	background: linear-gradient(to top right, #c3c8f0 10px, #c3c8f0 20px, #f890ab);}
+#clock.momo {}
+#clock.nia {}
 
-}
-#clock.kirara {	background: linear-gradient(to top right, #c2c6ec 16px, #f890ab);}
-#clock.momo {
-	text-shadow: #fdfcfe 1px 1px, #fdfcfe 1px -1px, #fdfcfe -1px 1px, #fdfcfe -1px -1px,
-				#fdfcfe 0px 1px, #fdfcfe 0px -1px, #fdfcfe -1px 0px, #fdfcfe 1px 0px;
-}
-#clock.nia {
-	text-stroke:0.5px #9ea6e4;
-	-webkit-text-stroke: 0.5px #9ea6e4;
-	text-shadow: white 4px 4px, white 4px -4px, white -4px 4px, white -4px -4px,
-				white 0px 4px, white 0px -4px, white -4px 0px, white 4px 0px;
-}
-
-.kirara #time {
+.kirara #time::after {
+	background: linear-gradient(#ea1f5f 16px, #cb5bbd);
 	color: transparent;
-	background: linear-gradient(#d353b1 16px, #ef2b69);
 	background-clip: text;
 	-webkit-background-clip: text;
-	text-fill-color: transparent;
-	-webkit-text-fill-color: transparent;
+	text-stroke: 0px white;
+	-webkit-text-stroke: 0px white;
 }
-#time {font-size: 3.5rem;}
+.nia #time::after {
+	text-stroke: 1px #afabe0;
+	-webkit-text-stroke: 1px #afabe0;
+}
+#time {
+	font-size: 3.5rem;
+	position:relative;
+	text-stroke: 8px white;
+	-webkit-text-stroke: 8px white;
+}
+#time::after {
+	position: absolute;
+	left: 0;
+	content: attr(data-time);
+	text-stroke: 0px white;
+	-webkit-text-stroke: 0px white;
+}
 hr {margin: 0.2rem;border: 1px solid var(--textcolor);}
 #dayweek {font-size: 2rem; color: var(--daycolor);}
-#day {color: var(--daycolor);}
-#week {color: var(--weekcolor);}
+#day {
+	color: var(--daycolor);
+	position:relative;
+	text-stroke: 4px white;
+	-webkit-text-stroke: 4px white;
+}
+#day::after {
+	content: attr(data-day);
+	position:absolute;
+	left: 0;
+	text-stroke: 0px white;
+	-webkit-text-stroke: 0px white;
+}
+#week {
+	color: var(--weekcolor);
+	position:relative;
+	text-stroke: 4px white;
+	-webkit-text-stroke: 4px white;
+}
+#week::after {
+	content: attr(data-week);
+	position:absolute;
+	left: 0;
+	text-stroke: 0px white;
+	-webkit-text-stroke: 0px white;
+}
 
 
