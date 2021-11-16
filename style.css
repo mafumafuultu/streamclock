@@ -79,7 +79,6 @@ body {
 #time::after {
 	position: absolute;
 	left: 0;
-	top: -4px;
 	content: attr(data-time);
 	text-stroke: 0px white;
 	-webkit-text-stroke: 0px white;
@@ -96,7 +95,6 @@ hr {margin: 0.2rem;border: 1px solid var(--textcolor);}
 	content: attr(data-day);
 	position:absolute;
 	left: 0;
-	top: -1px;
 	text-stroke: 0px white;
 	-webkit-text-stroke: 0px white;
 }
@@ -110,7 +108,6 @@ hr {margin: 0.2rem;border: 1px solid var(--textcolor);}
 	content: attr(data-week);
 	position:absolute;
 	left: 0;
-	top: -1px;
 	text-stroke: 0px white;
 	-webkit-text-stroke: 0px white;
 }

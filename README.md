@@ -17,7 +17,7 @@
 [DOWNLOAD](https://github.com/mafumafuultu/streamclock/archive/refs/heads/main.zip)
 
 
-![](./sample.jpg)
+![](./sample.png)
 
 ```html
 <div id="clock" class=""></div>
@@ -41,3 +41,6 @@
 ## obs
 default size: 200x150
 ![](./obs.jpg)
+
+If you want to change the font, specify the `font-family` in the `body` of the custom CSS.
+In that case, you need to adjust the size according to the font.
