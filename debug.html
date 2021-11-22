@@ -64,7 +64,7 @@ onload().then(() => {
 		param.append('theme', th);
 
 		let url = document.getElementById('url');
-		url.value = `${location.origin}${location.pathname}?${param}`;
+		url.value = `${location.origin}${location.pathname.replace('debug.html', '')}?${param}`;
 		url.select();
 		document.execCommand('copy');
 	};
@@ -75,7 +75,6 @@ onload().then(() => {
 		si.select();
 		document.execCommand('copy');
 	};
-	http://127.0.0.1:3000/d%3A/work/streamclock/index.html?style=live&theme=styledefault
 	up(el);
 });
 	</script>
