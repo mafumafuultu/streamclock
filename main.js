@@ -10,6 +10,7 @@ const onload = () => document.readyState !== 'complete'
 const time = () => {
 	let d = new Date();
 	return {
+		Y: d.getFullYear(),
 		M: (d.getMonth() + 1).toString().padStart(2, 0),
 		D: d.getDate().toString().padStart(2, 0),
 		W: d.toDateString().split(' ')[0],

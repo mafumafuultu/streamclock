@@ -6,15 +6,38 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="./main.js"></script>
 	<script>
+
+var st = '';
 const up = el => {
-	(t => el.innerHTML = `<div><time id="time" data-time="${t.h}:${t.m}">${t.h}:${t.m}</time><hr><div id="dayweek"><time id="day" data-day="${t.M}/${t.D}">${t.M}/${t.D}</time> <span id="week" data-week="${t.W}">${t.W}</span></div></div>`)(time());
+
+	switch(st) {
+		case "live":
+			(t => el.innerHTML = `<div><time id="time" class="text-border c-text" data-txt="${t.h}:${t.m}">${t.h}:${t.m}</time><span id="live" class="text-border c-week" data-txt="Live">Live</span></div>`)(time());
+			break;
+		case "long":
+			(t => el.innerHTML = `<div><span class="text-border c-week" data-txt="${t.Y}/${t.M}/${t.D}">${t.Y}/${t.M}/${t.D}</span><time id="time" class="text-border c-text" data-txt="${t.h}:${t.m}">${t.h}:${t.m}</time></div>`)(time());
+			break;
+		default: 
+			(t => el.innerHTML = `<div><time id="time" class="text-border c-text" data-txt="${t.h}:${t.m}">${t.h}:${t.m}</time><hr><div id="dayweek" class="text-border c-day"><time id="day" class="text-border c-day" data-txt="${t.M}/${t.D}">${t.M}/${t.D}</time> <span id="week" class="text-border c-week" data-txt="${t.W}">${t.W}</span></div></div>`)(time());
+	}
 	setTimeout(() => up(el), 1000);
 };
 onload().then(() => {
 	let u = new URLSearchParams(location.search);
 	let t = u.get('theme');
+	let s = u.get('style');
+	st = s;
 	let el = document.getElementById('clock');
-	t != null ? el.className = t : void 0;
+	if (t != null) {
+		var tt = document.querySelector(`input[type=radio][name=style][value=${t}]`);
+		if (tt) tt.checked = true;
+		el.classList.add(t);
+	}
+	if (s != null) {
+		var ss = document.querySelector(`input[type=radio][name=style][value=${s}]`);
+		if(ss) ss.checked = true;
+		el.classList.add(s);
+	}
 	up(el);
 });
 	</script>

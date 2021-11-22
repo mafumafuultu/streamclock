@@ -39,27 +39,39 @@ body {
 	--daycolor: #8bdbfd;
 	--weekcolor: #cdc1ff;
 }
+
+.c-text {color: var(--textcolor);}
+.c-bg {color: var(--bgcolor);}
+.c-day {color: var(--daycolor);}
+.c-week {color: var(--weekcolor);}
+
 #clock {
 	color: var(--textcolor);
 	grid-column: 2;
 	font-weight: bold;
-	background-color: var(--bgcolor);
-	width: 200px;
-	padding: 0.5rem 0;
+	background: var(--bgcolor);
+	padding: 0.25rem 1.5rem;
 	text-align: center;
 	border-radius: 4px;
 	text-stroke: 0.5px #fdfcfe;
 	-webkit-text-stroke: 0.5px #fdfcfe;
 }
-
-#clock.warabe {background: linear-gradient(to bottom, #ffdda3 0, #ffdda3 100px, #dacde7 100px, #dacde7 125px, #ffc8c1 125px, #ffc8c1 150px);}
+#clock.warabe {background: linear-gradient(to bottom, #ffdda3 0, #ffdda3 60%, #dacde7 60%, #dacde7 80%, #ffc8c1 80%, #ffc8c1 100%);}
 #clock.lilith {}
-#clock.kirara {	background: linear-gradient(to top right, #c3c8f0 10px, #c3c8f0 20px, #f890ab);}
+#clock.kirara {	background: linear-gradient(to top right, #c3c8f0 0, #c3c8f0 30%, #f890ab 70%);}
 #clock.momo {}
 #clock.nia {}
 
+#clock.live > div > span {
+	margin-left: 1rem;
+	font-size: 2rem
+}
+#clock.long > div > span {
+	margin-right: 0.5rem;
+}
+
 .kirara #time::after {
-	background: linear-gradient(#ea1f5f 16px, #cb5bbd);
+	background: linear-gradient(#ea1f5f 25%, #cb5bbd 75%);
 	color: transparent;
 	background-clip: text;
 	-webkit-background-clip: text;
@@ -79,37 +91,55 @@ body {
 #time::after {
 	position: absolute;
 	left: 0;
-	content: attr(data-time);
+	content: attr(data-txt);
 	text-stroke: 0px white;
 	-webkit-text-stroke: 0px white;
 }
 hr {margin: 0.2rem;border: 1px solid var(--textcolor);}
 #dayweek {font-size: 2rem; color: var(--daycolor);}
-#day {
-	color: var(--daycolor);
+
+/* #day {color: var(--daycolor);} */
+/* #week, #live {color: var(--weekcolor);} */
+#live::after {content: 'Live';top: 0;}
+
+
+
+
+.text-border {
 	position:relative;
 	text-stroke: 4px white;
 	-webkit-text-stroke: 4px white;
 }
-#day::after {
-	content: attr(data-day);
+.text-border::after {
+	content: attr(data-txt);
 	position:absolute;
 	left: 0;
-	text-stroke: 0px white;
-	-webkit-text-stroke: 0px white;
-}
-#week {
-	color: var(--weekcolor);
-	position:relative;
-	text-stroke: 4px white;
-	-webkit-text-stroke: 4px white;
-}
-#week::after {
-	content: attr(data-week);
-	position:absolute;
-	left: 0;
+	top:0;
 	text-stroke: 0px white;
 	-webkit-text-stroke: 0px white;
 }
 
+/* for debug */
+#themechanger {
+	position: fixed;
+	top: 10rem;
+	margin : 1rem;
+}
 
+
+button {
+	color: blue;
+	background-color: transparent;
+	border: 2px solid blue;
+	border-radius: 4px;
+	padding: 0.5rem;
+	font-weight: bold;
+	transition-duration: 200ms;
+	transition-property: color, box-shadow;
+	box-shadow: 0 0 0 blue inset;
+
+}
+button:hover {
+	box-shadow: 0 0 0 1rem blue inset;
+	color: white;
+}
