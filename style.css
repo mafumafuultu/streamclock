@@ -102,9 +102,6 @@ hr {margin: 0.2rem;border: 1px solid var(--textcolor);}
 /* #week, #live {color: var(--weekcolor);} */
 #live::after {content: 'Live';top: 0;}
 
-
-
-
 .text-border {
 	position:relative;
 	text-stroke: 4px white;
@@ -119,13 +116,14 @@ hr {margin: 0.2rem;border: 1px solid var(--textcolor);}
 	-webkit-text-stroke: 0px white;
 }
 
+#time.text-border::after {top:unset;}
+
 /* for debug */
 #themechanger {
 	position: fixed;
 	top: 10rem;
 	margin : 1rem;
 }
-
 
 button {
 	color: blue;
