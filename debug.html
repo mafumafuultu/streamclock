@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>desin_timer</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="./main.js"></script>
+	<script>
+
+var st = '';
+const up = el => {
+
+	switch(st) {
+		case "live":
+			(t => el.innerHTML = `<div><time id="time" class="text-border c-text" data-txt="${t.h}:${t.m}">${t.h}:${t.m}</time><span id="live" class="text-border c-week" data-txt="Live">Live</span></div>`)(time());
+			break;
+		case "long":
+			(t => el.innerHTML = `<div><span class="text-border c-week" data-txt="${t.Y}/${t.M}/${t.D}">${t.Y}/${t.M}/${t.D}</span><time id="time" class="text-border c-text" data-txt="${t.h}:${t.m}">${t.h}:${t.m}</time></div>`)(time());
+			break;
+		default: 
+			(t => el.innerHTML = `<div><time id="time" class="text-border c-text" data-txt="${t.h}:${t.m}">${t.h}:${t.m}</time><hr><div id="dayweek" class="text-border c-day"><time id="day" class="text-border c-day" data-txt="${t.M}/${t.D}">${t.M}/${t.D}</time> <span id="week" class="text-border c-week" data-txt="${t.W}">${t.W}</span></div></div>`)(time());
+	}
+	setTimeout(() => up(el), 1000);
+};
+onload().then(() => {
+	let u = new URLSearchParams(location.search);
+	let t = u.get('theme');
+	let s = u.get('style');
+	st = s;
+	let url = document.getElementById('url');
+	url.value = location.href;
+
+	let el = document.getElementById('clock');
+	if (t != null) {
+		var tt = document.querySelector(`input[type=radio][name=style][value=${t}]`);
+		if (tt) tt.checked = true;
+		el.classList.add(t);
+	}
+	if (s != null) {
+		var ss = document.querySelector(`input[type=radio][name=style][value=${s}]`);
+		if(ss) ss.checked = true;
+		el.classList.add(s);
+	}
+	if (null != u.get('hide')) {
+		document.getElementById('themechanger').style="display:none;"
+	}
+
+	document.querySelectorAll('input[type=radio]').forEach(e => {
+		e.onchange = function(ee) {
+			let rs = document.getElementById('clock');
+			let sty = document.querySelector('input[type=radio][name=style]:checked').value;
+			let th = document.querySelector('input[type=radio][name=theme]:checked').value;
+			rs.className = `${sty} ${th}`;
+			st = sty;
+			let {width, height} = rs.getBoundingClientRect();
+			document.getElementById('size').value = `${width}x${height}`;
+		}
+	});
+	document.getElementById('copylink').onclick = e => {
+		let sty = document.querySelector('input[type=radio][name=style]:checked').value;
+		let th = document.querySelector('input[type=radio][name=theme]:checked').value;
+		let param = new URLSearchParams();
+		param.append('style', sty);
+		param.append('theme', th);
+
+		let url = document.getElementById('url');
+		url.value = `${location.origin}${location.pathname}?${param}`;
+		url.select();
+		document.execCommand('copy');
+	};
+	document.getElementById('copysize').onclick = e => {
+		let {width, height} = el.getBoundingClientRect();
+		let si = document.getElementById('size');
+		si.value = `${Math.ceil(width)}x${Math.ceil(height)}`;
+		si.select();
+		document.execCommand('copy');
+	};
+	http://127.0.0.1:3000/d%3A/work/streamclock/index.html?style=live&theme=styledefault
+	up(el);
+});
+	</script>
+</head>
+<body>
+	<!--
+	class="~"
+		warabe
+		lilith
+		kirara
+		momo
+		nia
+	 -->
+	<div id="clock" class=""></div>
+	<div id="themechanger">
+		<div>
+			<label><input type="radio" name="style" value="themedefault" checked> default</label>
+			<label><input type="radio" name="style" value="live"> live</label>
+			<label><input type="radio" name="style" value="long"> long</label>
+		</div>
+		<div>
+			<label><input type="radio" name="theme" value="styledefault" checked> default</label>
+			<label><input type="radio" name="theme" value="warabe"> warabe</label>
+			<label><input type="radio" name="theme" value="lilith"> lilith</label>
+			<label><input type="radio" name="theme" value="kirara"> kirara</label>
+			<label><input type="radio" name="theme" value="momo"> momo</label>
+			<label><input type="radio" name="theme" value="nia"> nia</label>
+		</div>
+		<label for="url">url: <input type="text" id="url" readonly></label>
+		<button id="copylink">Copy URL</button>
+		<input type="text" id="size" readonly>
+		<button id="copysize">Copy Size</button>
+	</div>
+</body>
+</html>
