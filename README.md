@@ -18,6 +18,9 @@
 [kirara](https://mafumafuultu.github.io/streamclock/?theme=kirara&style=default)  
 [momo](https://mafumafuultu.github.io/streamclock/?theme=momo&style=default)  
 [nia](https://mafumafuultu.github.io/streamclock/?theme=nia&style=default)  
+[iroha](https://mafumafuultu.github.io/streamclock/?theme=iroha&style=default)  
+[regrush](https://mafumafuultu.github.io/streamclock/?theme=regrush&style=default)  
+[shin](https://mafumafuultu.github.io/streamclock/?theme=shin&style=default)  
 
 ### Style
 `https://mafumafuultu.github.io/streamclock/?theme=default&style=~~~~`
@@ -31,7 +34,7 @@
 
 
 ## obs
-default size: 200x150
+default size: 233x150
 ![](./img/obs.jpg)
 
 If you want to change the font, specify the `font-family` in the `body` of the custom CSS.
