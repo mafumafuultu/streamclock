@@ -32,11 +32,11 @@ onload().then(() => {
 
 	let el = document.getElementById('clock');
 	if (t != null) {
-		var tt = document.querySelector(`input[type=radio][name=style][value=${t}]`);
+		var tt = document.querySelector(`input[type=radio][name=theme][value=${t}]`);
 		if (tt) tt.checked = true;
 		el.classList.add(t);
 	}
-	if (s != null) {
+	if (null != s) {
 		var ss = document.querySelector(`input[type=radio][name=style][value=${s}]`);
 		if(ss) ss.checked = true;
 		el.classList.add(s);
@@ -87,6 +87,9 @@ onload().then(() => {
 		kirara
 		momo
 		nia
+		iroha
+		regrush
+		shin
 	 -->
 	<div id="clock" class=""></div>
 	<div id="themechanger">
@@ -102,6 +105,9 @@ onload().then(() => {
 			<label><input type="radio" name="theme" value="kirara"> kirara</label>
 			<label><input type="radio" name="theme" value="momo"> momo</label>
 			<label><input type="radio" name="theme" value="nia"> nia</label>
+			<label><input type="radio" name="theme" value="iroha"> iroha</label>
+			<label><input type="radio" name="theme" value="regrush"> regrush</label>
+			<label><input type="radio" name="theme" value="shin"> shin</label>
 		</div>
 		<label for="url">url: <input type="text" id="url" readonly></label>
 		<button id="copylink">Copy URL</button>
