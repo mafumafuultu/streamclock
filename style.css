@@ -14,30 +14,35 @@ body {
 	--bgcolor: #ffdda3;
 	--daycolor: #8f70ba;
 	--weekcolor: #8f70ba;
+	--img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii00MCwgLTQwLCA4MCwgODAiIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCI+IDxwYXRoIGlkPSJmbG93ZXIiIGQ9Ik0gLTQsIDAgUSAtNCwtNCAwLC00IDQsLTQgNCwwIDQsNCAwLDQgLTQsNCAtNCwwIE0gLTgsLTggUSAtMjAsLTEyIC0yMCwtOCBMIC0yMCw4IFEgLTIwLDEyIC04LDggUSAtMTIsMjAgLTgsMjAgTCA4LDIwIFEgMTIsMjAgOCw4IFEgMjAsMTIgMjAsOCBMIDIwLC04IFEgMjAsLTEyIDgsLTggUSAxMiwtMjAgOCwtMjAgTCAtOCwtMjAgUSAtMTIsLTIwIC04LC04IFoiIGZpbGw9IiNkNDNjM2MiIC8+PC9zdmc+");
 }
 .lilith {
 	--textcolor: #feb700;
-    --bgcolor: #30325b;
-    --daycolor: #ff8292;
+	--bgcolor: #30325b;
+	--daycolor: #ff8292;
 	--weekcolor: #ff8292;
+	--img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii00MCwgLTQwLCA4MCwgODAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+IDxkZWZzPiA8cGF0aCBpZD0iaGVhcnQiIGQ9Ik0gMCwyNSBDIC0yMCw1IC0xMCwxNSAtMzAsMCBDIC00NSwtMTUgLTI1LC00NSAwLC0xNyBDIDI1LC00NSA0NSwtMTUgMzAsMCBDIDEwLDE1IDIwLDUgMCwyNSBaIiAvPiA8L2RlZnM+IDxzeW1ib2wgaWQ9ImluaGVhcnQiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iLTQwIC00MCA4MCA4MCIgPiA8dXNlIGhyZWY9IiNoZWFydCIgeD0iMCIgeT0iMCIgLz4gPC9zeW1ib2w+IDx1c2UgaHJlZj0iI2hlYXJ0IiB4PSIwIiB5PSIwIiBmaWxsPSIjZmQ4MzkwIiAvPiA8dXNlIGhyZWY9IiNpbmhlYXJ0IiB4PSItMTUiIHk9Ii0xNSIgZmlsbD0id2hpdGUiIC8+PC9zdmc+");
 }
 .kirara {
 	--textcolor: #e13168;
 	--bgcolor: #e7a0c0;
 	--daycolor: #872b34;
 	--weekcolor: #872b34;
+	--img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii00MCwgLTQwLCA4MCwgODAiIHdpZHRoPSI3MCIgaGVpZ2h0PSI3MCI+IDxkZWZzPiA8cmVjdCBpZD0icmVjdC14IiB4PSItMjAiIHk9Ii00IiB3aWR0aD0iNDAiIGhlaWdodD0iMTAiIGZpbGw9IndoaXRlIiAvPiA8L2RlZnM+IDxzeW1ib2wgaWQ9InNpbS14IiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9Ii00MCAtNDAgODAgODAiID4gPHVzZSBocmVmPSIjcmVjdC14IiB4PSIwIiB5PSIwIiBzdHlsZT0idHJhbnNmb3JtOnJvdGF0ZVooNDVkZWcpIiAvPiA8dXNlIGhyZWY9IiNyZWN0LXgiIHg9IjAiIHk9IjAiIHN0eWxlPSJ0cmFuc2Zvcm06cm90YXRlWigtNDVkZWcpIiAvPiA8L3N5bWJvbD4gPHVzZSBocmVmPSIjc2ltLXgiIHg9Ii0zMCIgeT0iLTMwIiAvPiA8dXNlIGhyZWY9IiNzaW0teCIgeD0iLTEwIiB5PSItMzAiIC8+IDx1c2UgaHJlZj0iI3NpbS14IiB4PSIxMCIgeT0iLTMwIiAvPiA8dXNlIGhyZWY9IiNzaW0teCIgeD0iLTMwIiB5PSItMTAiIC8+IDx1c2UgaHJlZj0iI3NpbS14IiB4PSItMTAiIHk9Ii0xMCIgLz4gPHVzZSBocmVmPSIjc2ltLXgiIHg9IjEwIiB5PSItMTAiIC8+IDx1c2UgaHJlZj0iI3NpbS14IiB4PSItMzAiIHk9IjEwIiAvPiA8dXNlIGhyZWY9IiNzaW0teCIgeD0iLTEwIiB5PSIxMCIgLz4gPHVzZSBocmVmPSIjc2ltLXgiIHg9IjEwIiB5PSIxMCIgLz48L3N2Zz4=");
 }
 .momo {
 	--textcolor: #fe9abe;
 	--bgcolor: #ffdaf1;
 	--daycolor: #f0ca77;
 	--weekcolor: #6bcde8;
+	--img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMDAsIC0xMDAsIDIwMCwgMjAwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiPiA8cGF0aCBmaWxsPSIjZjBjYTc3IiBkPSJtIC0wLjM5MDMwMzMxLC05NS43ODA5MzcgYyAyMi4wNDU1OTYzMSwwIDI0LjcyNjQ5MjMxLDI0LjI0MTYyOCA0Mi41NjE3NTMzMSwzNy4xOTk3MDUgMTcuODM1MjYzLDEyLjk1ODA3OCA0MS43MTg4NjUsOC4wMTY2ODggNDguNTMxMzI5LDI4Ljk4MzI5NyBDIDk3LjUxNTI0MywtOC42MzEzMjcgNzUuMjg4NTI3LDEuNDA5NDMxNiA2OC40NzYwNjMsMjIuMzc2MDM5IDYxLjY2MzU5OCw0My4zNDI2NDkgNzMuNzQzNTc4LDY0LjUzMDMzIDU1LjkwODMxNCw3Ny40ODg0MDcgMzguMDczMDUyLDkwLjQ0NjQ4NCAyMS42NTUyOTEsNzIuNDEwMzg2IC0wLjM5MDMwNTU5LDcyLjQxMDM4NSAtMjIuNDM1OTA0LDcyLjQxMDM4NSAtMzguODUzNjY3LDkwLjQ0NjQ4MiAtNTYuNjg4OTMsNzcuNDg4NDA0IC03NC41MjQxOTIsNjQuNTMwMzI4IC02Mi40NDQyMTEsNDMuMzQyNjQ4IC02OS4yNTY2NzQsMjIuMzc2MDQgLTc2LjA2OTEzOCwxLjQwOTQzMDEgLTk4LjI5NTg1NCwtOC42MzEzMzAyIC05MS40ODMzOSwtMjkuNTk3OTQgYyA2LjgxMjQ2NCwtMjAuOTY2NjA4IDMwLjY5NjA2NSwtMTYuMDI1MjE2IDQ4LjUzMTMyNywtMjguOTgzMjkyIDE3LjgzNTI2NCwtMTIuOTU4MDc3IDIwLjUxNjE2MiwtMzcuMTk5NzA1IDQyLjU2MTc1OTY5LC0zNy4xOTk3MDUgeiIgLz48L3N2Zz4=");
 }
 .nia {
 	--textcolor: #fdb9e0;
 	--bgcolor: #fedcf2;
 	--daycolor: #8bdbfd;
 	--weekcolor: #cdc1ff;
+	--img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMDAsIC0xMDAsIDIwMCwgMjAwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiPiA8ZGVmcz4gPHBhdGggaWQ9Im1vb24iIGQ9Ik0gLTkwLC03MCBRIC04NSwtNzUgLTcwLC04MCBDIDIwLC04MCAzMCwtMjAgMzAsMCBDIDMwLDIwIDIwLDgwIC03MCw4MCBRIC04NSw3NSAtOTAsNzAgQyAtMzAsMzAgLTMwLC0zMCAtOTAsLTcwIFoiIGZpbGw9IiNmZmYzYTEiLz4gPC9kZWZzPiA8dXNlIGhyZWY9IiNtb29uIiBzdHJva2U9IiNmZmZjZmYiIHN0cm9rZS13aWR0aD0iNSIgLz4gPGxpbmUgeDE9Ii0xMCIgeTE9Ii02MCIgeDI9Ii0xMCIgeTI9IjYwIiBzdHJva2U9IiNmZmZjZmYiIHN0cm9rZS13aWR0aD0iMTUiIC8+IDxsaW5lIHgxPSItNDAiIHkxPSIwIiB4Mj0iMjUiIHkyPSIwIiBzdHJva2U9IiNmZmZjZmYiIHN0cm9rZS13aWR0aD0iMTUiIC8+PC9zdmc+");
 }
 .iroha {
 	--textcolor: #959bb2;
@@ -78,11 +83,33 @@ body {
 	text-stroke: 0.5px #fdfcfe;
 	-webkit-text-stroke: 0.5px #fdfcfe;
 }
-#clock.warabe {background: linear-gradient(to bottom, #ffdda3 0, #ffdda3 60%, #dacde7 60%, #dacde7 80%, #ffc8c1 80%, #ffc8c1 100%);}
-#clock.lilith {}
-#clock.kirara {	background: linear-gradient(to top right, #c3c8f0 0, #c3c8f0 30%, #f890ab 70%);}
-#clock.momo {}
-#clock.nia {}
+#clock.warabe {
+	background: var(--img), linear-gradient(to bottom, #ffdda3 0, #ffdda3 60%, #dacde7 60%, #dacde7 80%, #ffc8c1 80%, #ffc8c1 100%);
+	background-repeat: no-repeat;
+	background-position: center top 65%;
+}
+#clock.warabe.live {background-position: top right 15%;}
+#clock.warabe.long {background-position: top 15% left 20%;}
+#clock.lilith {background-repeat: no-repeat;background-position: center top 65%;}
+#clock.lilith.live {background-position: top right 15%;}
+#clock.lilith.long {background-position: top 20% left 20%;}
+#clock.kirara {
+	background: var(--img) no-repeat, linear-gradient(to top right, #c3c8f0 0, #c3c8f0 30%, #f890ab 70%);
+	background-position: bottom 0 left 0;
+}
+#clock.momo {
+	background-repeat: no-repeat;
+	background-position: center top 65%;
+}
+#clock.momo.live {background-position: top 10% right 15%;}
+#clock.momo.long {background-position: top 15% left 20%;}
+#clock.nia {
+	background-repeat: no-repeat;
+	background-position: center top 65%;
+	box-shadow: 0 0 0 2px inset #a69ecd;
+}
+#clock.nia.live {background-position: top 10% right 15%;}
+#clock.nia.long {background-position: top 15% left 20%;}
 #clock.regrush {
 	background-repeat: no-repeat;
 	background-position: left 50%;
@@ -101,13 +128,8 @@ body {
 }
 #clock.shin.live {background-position: right 5% top -20px;}
 #clock.shin.long {background-position: left 5% top -20px;}
-#clock.live > div > span {
-	margin-left: 1rem;
-	font-size: 2rem
-}
-#clock.long > div > span {
-	margin-right: 0.5rem;
-}
+#clock.live > div > span {margin-left: 1rem;font-size: 2rem}
+#clock.long > div > span {margin-right: 0.5rem;}
 
 .kirara #time::after {
 	background: linear-gradient(#ea1f5f 25%, #cb5bbd 75%);
@@ -138,8 +160,6 @@ body {
 hr {margin: 0.2rem;border: 1px solid var(--textcolor);}
 #dayweek {font-size: 2rem; color: var(--daycolor);}
 
-/* #day {color: var(--daycolor);} */
-/* #week, #live {color: var(--weekcolor);} */
 #live::after {content: 'Live';top: 0;}
 
 .text-border {
