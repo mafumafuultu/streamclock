@@ -23,12 +23,12 @@ const themes = [
 	'regrush',
 	'shin',
 ];
-const customcss = (font = '', format = '') => `@font-face {
+const customcss = (font = '', format = '', padding = '0.25rem 1.5rem 0.25rem 1.5rem') => `@font-face {
   font-family: 'customfont';
   src: url(${font}) format('${format}')
 }
 body {background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden;opacity: 0.8}
-#clock { font-family: 'customfont'; }
+#clock { font-family: 'customfont'; padding: ${padding};}
 `;
 const samplefonts = {
 	'Roboto Mono': {
@@ -45,6 +45,7 @@ const samplefonts = {
 	}
 };
 const ID = id => document.getElementById(id);
+const QU = s => document.querySelector(s);
 var st = '';
 const up = el => {
 	switch(st) {
@@ -59,15 +60,23 @@ const up = el => {
 	}
 	setTimeout(() => up(el), 1000);
 };
-
+const reset = () => {
+	ID('yourfontpath').value="",
+	ID('selfontformat').value="",
+	ID('fontpadding-top').value=0.25, QU('#fontpadding-top + select').value='rem',
+	ID('fontpadding-right').value=1.5, QU('#fontpadding-right + select').value='rem',
+	ID('fontpadding-bottom').value=0.25, QU('#fontpadding-bottom + select').value='rem',
+	ID('fontpadding-left').value=1.5, QU('#fontpadding-left + select').value ='rem';
+	var txt = customcss();
+	ID('obscustomcss').value = txt;
+	ID('csscustom').textContent = txt;
+};
 const samplefontapply = e => {
 	var fpath = ID('yourfontpath'),
 		fformat = ID('selfontformat');
 	ID('csscustom').innerText = ID('obscustomcss').value = customcss(fpath.value = e.target.dataset.url, fformat.value = e.target.dataset.format);
 }
 const createsampleFont = () => {
-	//class="samplefonts"
-	;
 	ID('fontsamples').append(...Object.entries(samplefonts).map(([name, data] = v) => {
 		let btn = document.createElement('button');
 		btn.className = 'samplefonts';
@@ -77,8 +86,11 @@ const createsampleFont = () => {
 		btn.onclick = samplefontapply;
 		return btn;
 	}));
-
-}
+};
+const createunit = () => {
+	const units = ['rem', 'px', 'em', '%'].map(v => `<option value="${v}">${v}</option>`).join('');
+	document.querySelectorAll('.selectunit').forEach(e => e.innerHTML = units);
+};
 
 onload().then(() => {
 	let u = new URLSearchParams(location.search);
@@ -104,9 +116,8 @@ onload().then(() => {
 			: 'default';
 		el.classList.add(ss);
 	}
-	if (null != u.get('hide')) {
-		ID('themechanger').style="display:none;"
-	}
+	if (null != u.get('hide')) ID('themechanger').style="display:none;";
+
 	[seltheme, selstyle].forEach(e => {
 		e.onchange = function(ee) {
 			let rs = ID('clock');
@@ -150,11 +161,17 @@ onload().then(() => {
 		document.execCommand('copy');
 	};
 	ID('customcssupdate').onclick = e => {
-	var fpath = ID('yourfontpath'),
-		fformat = ID('selfontformat');
-	ID('csscustom').innerText = ID('obscustomcss').value = customcss(fpath.value, fformat.value);
-
+		var fpath = ID('yourfontpath'),
+			fformat = ID('selfontformat'),
+			t = ID('fontpadding-top').value + QU('#fontpadding-top + select').value,
+			r = ID('fontpadding-right').value + QU('#fontpadding-right + select').value,
+			b = ID('fontpadding-bottom').value + QU('#fontpadding-bottom + select').value,
+			l = ID('fontpadding-left').value + QU('#fontpadding-left + select').value;
+		var txt = customcss(fpath.value, fformat.value, `${t} ${r} ${b} ${l}`);
+		ID('obscustomcss').value = txt;
+		ID('csscustom').textContent = txt;
 	}
+	createunit();
 	createsampleFont();
 	up(el);
 });
@@ -199,6 +216,7 @@ onload().then(() => {
 			<button id="copylink">Copy URL</button>
 			<label for="text">size: </label><input type="text" id="size" readonly>
 			<button id="copysize">Copy Size</button>
+			
 		</div>
 		<div>
 			<h3>OBS custom CSS</h3>
@@ -214,8 +232,16 @@ onload().then(() => {
 					<option value="svg">.svg</option>
 				</select>
 				<button id="customcssupdate">Update</button>
+				<label for="">padding:</label>
+				<div id="custompadding" class="grid">
+					<label for="fontpadding-top">top:</label><input type="number" name="" id="fontpadding-top" value="0.25"><select class="selectunit"></select>
+					<label for="fontpadding-right">right:</label><input type="number" name="" id="fontpadding-right" value="1.5"><select class="selectunit"></select>
+					<label for="fontpadding-bottom">bottom:</label><input type="number" name="" id="fontpadding-bottom" value="0.25"><select class="selectunit"></select>
+					<label for="fontpadding-left">left:</label><input type="number" name="" id="fontpadding-left" value="1.5"><select class="selectunit"></select>
+				</div>
 			</div>
 			<textarea name="" id="obscustomcss" >body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden;opacity: 0.8}</textarea>
+			<button id="reset" onclick="reset()">reset</button>
 			<details>
 				<summary>font samples</summary>
 				<div id="fontsamples" class="flex"></div>

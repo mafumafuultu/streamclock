@@ -201,10 +201,9 @@ button:hover {
 	box-shadow: 0 0 0 1rem blue inset;
 	color: white;
 }
-input[type=text], input[type=search] {
+input[type=text], input[type=search],input[type=number] {
 	padding: 0.5rem;
 	border-radius: 4px;
-	min-width: 300px;
 }
 select {
 	padding: 0.5rem;
@@ -215,7 +214,8 @@ option {padding: 0.5rem;}
 
 select:hover,
 input[type=text]:hover,
-input[type=search]:hover {
+input[type=search]:hover,
+input[type=number]:hover {
 	box-shadow: 0 0 0 1px blue;
 }
 .grid {
@@ -248,3 +248,7 @@ summary {
 }
 #fontsamples {
 }
+#custompadding {
+	grid-template-columns: max-content 100px 100px;
+}
+#custompadding select {width: 100px;}
