@@ -8,7 +8,9 @@
 ![](./img/sample.png)
 
 ## Demo
+
 [Theme & style select](https://mafumafuultu.github.io/streamclock/debug.html)
+
 
 ### Theme
 `https://mafumafuultu.github.io/streamclock/?theme=~~~~`
@@ -35,7 +37,7 @@
 default size: 233x150
 ![](./img/obs.jpg)
 
-To change the font in OBS, change the `font-family` of `#clock` or use WebFont
+OBSでfontを変更する場合 `#clock` の `font-family` を変更するか、WebFontを使用してください
 
 ```css
 @font-face {

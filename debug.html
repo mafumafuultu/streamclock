@@ -4,12 +4,49 @@
 	<meta charset="utf-8">
 	<title>desin_timer</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<style id="csscustom"></style>
 	<script src="./main.js"></script>
 	<script>
-
+const styles = [
+	'default',
+	'live',
+	'long',
+];
+const themes = [
+	'default',
+	'warabe',
+	'lilith',
+	'kirara',
+	'momo',
+	'nia',
+	'iroha',
+	'regrush',
+	'shin',
+];
+const customcss = (font = '', format = '') => `@font-face {
+  font-family: 'customfont';
+  src: url(${font}) format('${format}')
+}
+body {background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden;opacity: 0.8}
+#clock { font-family: 'customfont'; }
+`;
+const samplefonts = {
+	'Roboto Mono': {
+		url: 'https://fonts.gstatic.com/s/robotomono/v13/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_AP2_ROW4.woff2',
+		format: 'woff2'
+	},
+	'Press Start 2P': {
+		url: 'https://fonts.gstatic.com/s/pressstart2p/v9/e3t4euO8T-267oIAQAu6jDQyK3nVivM.woff2',
+		format: 'woff2'
+	},
+	'Noto Sans Mono': {
+		url: 'https://fonts.gstatic.com/s/notosansmono/v11/BngrUXNETWXI6LwhGYvaxZikqZqK6fBq6kPvUce2oAZcdthSBUsYck4-_FNJ093dVQ.woff2',
+		format: 'woff2'
+	}
+};
+const ID = id => document.getElementById(id);
 var st = '';
 const up = el => {
-
 	switch(st) {
 		case "live":
 			(t => el.innerHTML = `<div><time id="time" class="text-border c-text" data-txt="${t.h}:${t.m}">${t.h}:${t.m}</time><span id="live" class="text-border c-week" data-txt="Live">Live</span></div>`)(time());
@@ -22,59 +59,103 @@ const up = el => {
 	}
 	setTimeout(() => up(el), 1000);
 };
+
+const samplefontapply = e => {
+	var fpath = ID('yourfontpath'),
+		fformat = ID('selfontformat');
+	ID('csscustom').innerText = ID('obscustomcss').value = customcss(fpath.value = e.target.dataset.url, fformat.value = e.target.dataset.format);
+}
+const createsampleFont = () => {
+	//class="samplefonts"
+	;
+	ID('fontsamples').append(...Object.entries(samplefonts).map(([name, data] = v) => {
+		let btn = document.createElement('button');
+		btn.className = 'samplefonts';
+		btn.innerText = name;
+		btn.dataset.url = data.url;
+		btn.dataset.format = data.format;
+		btn.onclick = samplefontapply;
+		return btn;
+	}));
+
+}
+
 onload().then(() => {
 	let u = new URLSearchParams(location.search);
-	let t = u.get('theme');
-	let s = u.get('style');
+	let t = u.get('theme')?.replace(/\s/g, '').toLowerCase();
+	let s = u.get('style')?.replace(/\s/g, '').toLowerCase();
 	st = s;
-	let url = document.getElementById('url');
+	let url = ID('url');
 	url.value = location.href;
+	let seltheme = ID('seltheme');
+	let selstyle = ID('selstyle');
+	ID('obscustomcss').value = customcss();
 
-	let el = document.getElementById('clock');
+	let el = ID('clock');
 	if (t != null) {
-		var tt = document.querySelector(`input[type=radio][name=theme][value=${t}]`);
-		if (tt) tt.checked = true;
-		el.classList.add(t);
+		let tt = seltheme.value = themes.some(v => v == t)
+			? t
+			: 'default';
+		el.classList.add(tt);
 	}
 	if (null != s) {
-		var ss = document.querySelector(`input[type=radio][name=style][value=${s}]`);
-		if(ss) ss.checked = true;
-		el.classList.add(s);
+		let ss = selstyle.value = styles.some(v => v == s)
+			? s
+			: 'default';
+		el.classList.add(ss);
 	}
 	if (null != u.get('hide')) {
-		document.getElementById('themechanger').style="display:none;"
+		ID('themechanger').style="display:none;"
 	}
-
-	document.querySelectorAll('input[type=radio]').forEach(e => {
+	[seltheme, selstyle].forEach(e => {
 		e.onchange = function(ee) {
-			let rs = document.getElementById('clock');
-			let sty = document.querySelector('input[type=radio][name=style]:checked').value;
-			let th = document.querySelector('input[type=radio][name=theme]:checked').value;
+			let rs = ID('clock');
+			let sty = selstyle.value;
+			let th = seltheme.value;
 			rs.className = `${sty} ${th}`;
 			st = sty;
 			let {width, height} = rs.getBoundingClientRect();
-			document.getElementById('size').value = `${width}x${height}`;
+			ID('size').value = `${width}x${height}`;
+		}
+	})
+	
+	document.querySelectorAll('input[type=radio]').forEach(e => {
+		e.onchange = function(ee) {
+			let rs = ID('clock');
+			let sty = selstyle.value;
+			let th = seltheme.value;
+			rs.className = `${sty} ${th}`;
+			st = sty;
+			let {width, height} = rs.getBoundingClientRect();
+			ID('size').value = `${width}x${height}`;
 		}
 	});
-	document.getElementById('copylink').onclick = e => {
-		let sty = document.querySelector('input[type=radio][name=style]:checked').value;
-		let th = document.querySelector('input[type=radio][name=theme]:checked').value;
+	ID('copylink').onclick = e => {
+		let sty = selstyle.value;
+		let th = seltheme.value;
 		let param = new URLSearchParams();
 		param.append('style', sty);
 		param.append('theme', th);
 
-		let url = document.getElementById('url');
+		let url = ID('url');
 		url.value = `${location.origin}${location.pathname.replace('debug.html', '')}?${param}`;
 		url.select();
 		document.execCommand('copy');
 	};
-	document.getElementById('copysize').onclick = e => {
+	ID('copysize').onclick = e => {
 		let {width, height} = el.getBoundingClientRect();
-		let si = document.getElementById('size');
+		let si = ID('size');
 		si.value = `${Math.ceil(width)}x${Math.ceil(height)}`;
 		si.select();
 		document.execCommand('copy');
 	};
+	ID('customcssupdate').onclick = e => {
+	var fpath = ID('yourfontpath'),
+		fformat = ID('selfontformat');
+	ID('csscustom').innerText = ID('obscustomcss').value = customcss(fpath.value, fformat.value);
+
+	}
+	createsampleFont();
 	up(el);
 });
 	</script>
@@ -82,37 +163,64 @@ onload().then(() => {
 <body>
 	<!--
 	class="~"
-		warabe
-		lilith
-		kirara
-		momo
-		nia
-		iroha
-		regrush
-		shin
+	warabe
+	lilith
+	kirara
+	momo
+	nia
+	iroha
+	regrush
+	shin
 	 -->
 	<div id="clock" class=""></div>
 	<div id="themechanger">
-		<div>
-			<label><input type="radio" name="style" value="themedefault" checked> default</label>
-			<label><input type="radio" name="style" value="live"> live</label>
-			<label><input type="radio" name="style" value="long"> long</label>
+		<div id="viewgrid" class="grid">
+			<label for="selstyle">Style:</label>
+			<select name="style" id="selstyle">
+				<option value="themedefault">default</option>
+				<option value="live"> live</option>
+				<option value="long"> long</option>
+			</select>
+			<label for="seltheme">Theme:</label>
+			<select name="theme" id="seltheme">
+				<option value="styledefault" checked> default</option>
+				<option value="warabe"> warabe</option>
+				<option value="lilith"> lilith</option>
+				<option value="kirara"> kirara</option>
+				<option value="momo"> momo</option>
+				<option value="nia"> nia</option>
+				<option value="iroha"> iroha</option>
+				<option value="regrush"> regrush</option>
+				<option value="shin"> shin</option>
+			</select>
+		</div>
+		<div id="formgrid" class="grid">
+			<label for="url">url: </label><input type="text" id="url" readonly>
+			<button id="copylink">Copy URL</button>
+			<label for="text">size: </label><input type="text" id="size" readonly>
+			<button id="copysize">Copy Size</button>
 		</div>
 		<div>
-			<label><input type="radio" name="theme" value="styledefault" checked> default</label>
-			<label><input type="radio" name="theme" value="warabe"> warabe</label>
-			<label><input type="radio" name="theme" value="lilith"> lilith</label>
-			<label><input type="radio" name="theme" value="kirara"> kirara</label>
-			<label><input type="radio" name="theme" value="momo"> momo</label>
-			<label><input type="radio" name="theme" value="nia"> nia</label>
-			<label><input type="radio" name="theme" value="iroha"> iroha</label>
-			<label><input type="radio" name="theme" value="regrush"> regrush</label>
-			<label><input type="radio" name="theme" value="shin"> shin</label>
+			<h3>OBS custom CSS</h3>
+			<div id="obssetting" class="grid">
+				<label for="yourfontpath" list="">font:</label>
+				<input type="search" id="yourfontpath" placeholder="input font fullpath">
+				<select id="selfontformat">
+					<option value="">Select font format</option>
+					<option value="woff">.woff</option>
+					<option value="woff2">.woff2</option>
+					<option value="truetype">.ttf</option>
+					<option value="opentype">.otf</option>
+					<option value="svg">.svg</option>
+				</select>
+				<button id="customcssupdate">Update</button>
+			</div>
+			<textarea name="" id="obscustomcss" >body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden;opacity: 0.8}</textarea>
+			<details>
+				<summary>font samples</summary>
+				<div id="fontsamples" class="flex"></div>
+			</details>
 		</div>
-		<label for="url">url: <input type="text" id="url" readonly></label>
-		<button id="copylink">Copy URL</button>
-		<input type="text" id="size" readonly>
-		<button id="copysize">Copy Size</button>
 	</div>
 </body>
 </html>
