@@ -26,19 +26,23 @@ body {}
 	--img2: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAsIC0yMDAsIDIwMCwgMjAwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiPiA8cGF0aCBkPSJNIDAsLTIwIFEgNDAsLTEzMCAxMTAsLTE1MCBDIDE5MCwtMTYwIDE5MCwtMTIwIDEyMCwtOTAgQyAxODAsLTEyMCAxODAsLTUwIDgwLC00MCBDIDE2MCwtNzAgMTYwLDMwIDAsLTIwIiBzdHJva2U9IiM3OGJmZjAiIHN0cm9rZS13aWR0aD0iNiIgZmlsbD0id2hpdGUiIC8+PC9zdmc+");
 	--img3: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0yMDAsIC0yMDAsIDIwMCwgMjAwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiPiA8cGF0aCBkPSJNIDAsLTIwIFEgLTQwLC0xMzAgLTExMCwtMTUwIEMgLTE5MCwtMTYwIC0xOTAsLTEyMCAtMTIwLC05MCBDIC0xODAsLTEyMCAtMTgwLC01MCAtODAsLTQwIEMgLTE2MCwtNzAgLTE2MCwzMCAwLC0yMCIgc3Ryb2tlPSIjNzhiZmYwIiBzdHJva2Utd2lkdGg9IjYiIGZpbGw9IndoaXRlIiAvPjwvc3ZnPg==");
 }
-.yuzuru {
-	--textcolor: #d43c3c;
-	--bgcolor: #ffdda3;
-	--daycolor: #8f70ba;
-	--weekcolor: #8f70ba;
-	--img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii00MCwgLTQwLCA4MCwgODAiIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCI+IDxwYXRoIGlkPSJmbG93ZXIiIGQ9Ik0gLTQsIDAgUSAtNCwtNCAwLC00IDQsLTQgNCwwIDQsNCAwLDQgLTQsNCAtNCwwIE0gLTgsLTggUSAtMjAsLTEyIC0yMCwtOCBMIC0yMCw4IFEgLTIwLDEyIC04LDggUSAtMTIsMjAgLTgsMjAgTCA4LDIwIFEgMTIsMjAgOCw4IFEgMjAsMTIgMjAsOCBMIDIwLC04IFEgMjAsLTEyIDgsLTggUSAxMiwtMjAgOCwtMjAgTCAtOCwtMjAgUSAtMTIsLTIwIC04LC04IFoiIGZpbGw9IiNkNDNjM2MiIC8+PC9zdmc+");
-}
 .milk {
-	--textcolor: #d43c3c;
-	--bgcolor: #ffdda3;
-	--daycolor: #8f70ba;
-	--weekcolor: #8f70ba;
-	--img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii00MCwgLTQwLCA4MCwgODAiIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCI+IDxwYXRoIGlkPSJmbG93ZXIiIGQ9Ik0gLTQsIDAgUSAtNCwtNCAwLC00IDQsLTQgNCwwIDQsNCAwLDQgLTQsNCAtNCwwIE0gLTgsLTggUSAtMjAsLTEyIC0yMCwtOCBMIC0yMCw4IFEgLTIwLDEyIC04LDggUSAtMTIsMjAgLTgsMjAgTCA4LDIwIFEgMTIsMjAgOCw4IFEgMjAsMTIgMjAsOCBMIDIwLC04IFEgMjAsLTEyIDgsLTggUSAxMiwtMjAgOCwtMjAgTCAtOCwtMjAgUSAtMTIsLTIwIC04LC04IFoiIGZpbGw9IiNkNDNjM2MiIC8+PC9zdmc+");
+	--textcolor: #ff9aa9;
+	--bgcolor: #ffdbe5;
+	--daycolor: #fddd94;
+	--weekcolor: #9de39c;
+	--img: none;
+}
+.yuzuru {
+	--textcolor: #bc94d1;
+	--bgcolor: #ffffff;
+	--daycolor: #f787af;
+	--weekcolor: #f787af;
+	--img: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyIgPz48c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iLTEwMCwgLTEwMCwgMjAwLCAyMDAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+IDxwb2x5Z29uIHBvaW50cz0iLTYwLC00MCAwLC0xMCA2MCwtNDAgNjAsNDAgMCwxMCAtNjAsNDAiIGZpbGw9IiNmZjdiYWQiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iNyIgLz48L3N2Zz4=");
+	--img-lt: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMDAsIC0xMDAsIDIwMCwgMjAwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCI+IDxwb2x5bGluZSBwb2ludHM9Ii05NSwtNDAgLTk1LC02MCAtODAsLTYwIC04MCwtOTUgLTk1LC05NSAtOTUsLTgwIC02MCwtODAgLTYwLC05NSAtMCwtOTUiIHN0cm9rZT0iI2NkYzBkZSIgc3Ryb2tlLXdpZHRoPSI1IiBmaWxsPSJub25lIiAvPiA8L3N2Zz4=");
+	--img-rt: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMDAsIC0xMDAsIDIwMCwgMjAwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCI+IDxwb2x5bGluZSBwb2ludHM9Ijk1LC00MCA5NSwtNjAgODAsLTYwIDgwLC05NSA5NSwtOTUgOTUsLTgwIDYwLC04MCA2MCwtOTUgMCwtOTUiIHN0cm9rZT0iI2NkYzBkZSIgc3Ryb2tlLXdpZHRoPSI1IiBmaWxsPSJub25lIiAvPiA8L3N2Zz4=");
+	--img-lb: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMDAsIC0xMDAsIDIwMCwgMjAwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCI+IDxwb2x5bGluZSBwb2ludHM9Ii05NSw0MCAtOTUsNjAgLTgwLDYwIC04MCw5NSAtOTUsOTUgLTk1LDgwIC02MCw4MCAtNjAsOTUgLTAsOTUiIHN0cm9rZT0iI2NkYzBkZSIgc3Ryb2tlLXdpZHRoPSI1IiBmaWxsPSJub25lIiAvPiA8L3N2Zz4=");
+	--img-rb: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMDAsIC0xMDAsIDIwMCwgMjAwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCI+IDxwb2x5bGluZSBwb2ludHM9Ijk1LDQwIDk1LDYwIDgwLDYwIDgwLDk1IDk1LDk1IDk1LDgwIDYwLDgwIDYwLDk1IDAsOTUiIHN0cm9rZT0iI2NkYzBkZSIgc3Ryb2tlLXdpZHRoPSI1IiBmaWxsPSJub25lIiAvPjwvc3ZnPg==");
 }
 
 .warabe {
@@ -122,14 +126,23 @@ body {}
 }
 #clock.norio.live {background-position: top 15% right 15%;}
 #clock.norio.long {background-position: top 15% left 20%;}
-#clock.mishiro {
-	background: var(--img2) right top 45% no-repeat,var(--img3) left top 45% no-repeat, var(--img) repeat;
-}
+#clock.mishiro {background: var(--img2) right top 45% no-repeat,var(--img3) left top 45% no-repeat, var(--img) repeat;}
 #clock.mishiro.live {background: var(--img2) right 5%  top 15% no-repeat,var(--img3) right 25% top 15% no-repeat, var(--img) repeat;}
 #clock.mishiro.long {background: var(--img2) left 25%  top 15% no-repeat,var(--img3) left 10% top 15% no-repeat, var(--img) repeat;}
 
+#clock.milk {background: linear-gradient(transparent 19%,#f69bab 19%, #f69bab 20%, white 20%, white 80%, #f69bab 80%, #f69bab 81%, transparent 81%),repeating-linear-gradient(-50deg, #ffdbe7 0, #ffdbe7 20px, #feeaef 20px, #feeaef 30px, #ffdbe7 30px,#ffdbe7 45px, #feeaef 45px, #feeaef 55px,#ffdbe7 55px,#ffdbe7 85px);}
+#clock.milk.live {}
+#clock.milk.long {}
+
+#clock.yuzuru {
+	--pad: 4px;
+	box-shadow: 0 0 0 2px var(--textcolor) inset;
+	background: var(--img) no-repeat center top 65%, var(--img-lt) no-repeat left var(--pad) top var(--pad), var(--img-rt) no-repeat right var(--pad) top var(--pad), var(--img-lb) no-repeat left var(--pad) bottom var(--pad), var(--img-rb) no-repeat right var(--pad) bottom var(--pad);}
+#clock.yuzuru.live {background: var(--img) no-repeat right 15% top 15%, var(--img-lt) no-repeat left var(--pad) top var(--pad), var(--img-rt) no-repeat right var(--pad) top var(--pad), var(--img-lb) no-repeat left var(--pad) bottom var(--pad), var(--img-rb) no-repeat right var(--pad) bottom var(--pad);}
+#clock.yuzuru.long {background: var(--img) no-repeat left 20% top 25%, var(--img-lt) no-repeat left var(--pad) top var(--pad), var(--img-rt) no-repeat right var(--pad) top var(--pad), var(--img-lb) no-repeat left var(--pad) bottom var(--pad), var(--img-rb) no-repeat right var(--pad) bottom var(--pad);}
+
 #clock.warabe {
-	background: var(--img), linear-gradient(to bottom, #ffdda3 0, #ffdda3 60%, #dacde7 60%, #dacde7 80%, #ffc8c1 80%, #ffc8c1 100%);
+	background: var(--img) no-repeat, linear-gradient(to bottom, #ffdda3 0, #ffdda3 60%, #dacde7 60%, #dacde7 80%, #ffc8c1 80%, #ffc8c1 100%);
 	background-position: center top 65%;
 }
 #clock.warabe.live {background-position: top right 15%;}
@@ -234,7 +247,7 @@ button:hover {
 	box-shadow: 0 0 0 1rem blue inset;
 	color: white;
 }
-input[type=text], input[type=search],input[type=number] {
+input[type=text], input[type=search], input[type=number] {
 	padding: 0.5rem;
 	border-radius: 4px;
 }
@@ -242,6 +255,7 @@ select {
 	padding: 0.5rem;
 	border-radius: 4px;
 	width: 200px;
+	border: 2px solid;
 }
 option {padding: 0.5rem;}
 
@@ -255,15 +269,12 @@ input[type=number]:hover {
 	display: grid;
 	gap: 4px;
 }
-.flex {display: flex;
-	gap: 4px;}
+.flex {display: flex; gap: 4px;}
 #viewgrid {
 	grid-template-columns: 4rem 200px;
 	margin-bottom: 4px;
 }
-#formgrid {
-	grid-template-columns: 4rem 1fr 200px;
-}
+#formgrid {grid-template-columns: 4rem 1fr 200px;}
 #obssetting {
 	grid-template-columns: 4rem 1fr 200px 200px;
 	margin-bottom: 4px;
@@ -276,14 +287,9 @@ input[type=number]:hover {
 	padding: 0.5rem;
 	margin:0;
 }
-summary {
-	padding: 0.5rem;
-}
-#fontsamples {
-}
-#custompadding {
-	grid-template-columns: max-content 100px 100px;
-}
+summary {padding: 0.5rem;}
+#fontsamples {}
+#custompadding {grid-template-columns: max-content 100px 100px;}
 #custompadding select {width: 100px;}
 
 ::-webkit-scrollbar{
