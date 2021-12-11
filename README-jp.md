@@ -16,6 +16,10 @@
 `https://mafumafuultu.github.io/streamclock/?theme=~~~~`
 
 [default](https://mafumafuultu.github.io/streamclock/?style=default)  
+[norio](https://mafumafuultu.github.io/streamclock/?theme=norio&style=default)  
+[mishiro](https://mafumafuultu.github.io/streamclock/?theme=mishiro&style=default)  
+[milk](https://mafumafuultu.github.io/streamclock/?theme=milk&style=default)  
+[yuzuru](https://mafumafuultu.github.io/streamclock/?theme=yuzuru&style=default)  
 [warabe](https://mafumafuultu.github.io/streamclock/?theme=warabe&style=default)  
 [lilith](https://mafumafuultu.github.io/streamclock/?theme=lilith&style=default)  
 [kirara](https://mafumafuultu.github.io/streamclock/?theme=kirara&style=default)  

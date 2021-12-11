@@ -8,12 +8,16 @@
 	<script src="./main.js"></script>
 	<script>
 const styles = [
-	'default',
+	'styledefault',
 	'live',
 	'long',
 ];
 const themes = [
-	'default',
+	'themedefault',
+	'norio',
+	'mishiro',
+	'milk',
+	'yuzuru',
 	'warabe',
 	'lilith',
 	'kirara',
@@ -44,22 +48,10 @@ const samplefonts = {
 		format: 'woff2'
 	}
 };
-const ID = id => document.getElementById(id);
-const QU = s => document.querySelector(s);
+
+const urlbase = `${location.origin}${location.pathname.replace('debug.html', '')}`;
 var st = '';
-const up = el => {
-	switch(st) {
-		case "live":
-			(t => el.innerHTML = `<div><time id="time" class="text-border c-text" data-txt="${t.h}:${t.m}">${t.h}:${t.m}</time><span id="live" class="text-border c-week" data-txt="Live">Live</span></div>`)(time());
-			break;
-		case "long":
-			(t => el.innerHTML = `<div><span class="text-border c-week" data-txt="${t.Y}/${t.M}/${t.D}">${t.Y}/${t.M}/${t.D}</span><time id="time" class="text-border c-text" data-txt="${t.h}:${t.m}">${t.h}:${t.m}</time></div>`)(time());
-			break;
-		default: 
-			(t => el.innerHTML = `<div><time id="time" class="text-border c-text" data-txt="${t.h}:${t.m}">${t.h}:${t.m}</time><hr><div id="dayweek" class="text-border c-day"><time id="day" class="text-border c-day" data-txt="${t.M}/${t.D}">${t.M}/${t.D}</time> <span id="week" class="text-border c-week" data-txt="${t.W}">${t.W}</span></div></div>`)(time());
-	}
-	setTimeout(() => up(el), 1000);
-};
+
 const reset = () => {
 	ID('yourfontpath').value="",
 	ID('selfontformat').value="",
@@ -98,7 +90,7 @@ onload().then(() => {
 	let s = u.get('style')?.replace(/\s/g, '').toLowerCase();
 	st = s;
 	let url = ID('url');
-	url.value = location.href;
+	url.value = `${urlbase}${ (v => v.length ? `?${v}` : '')(u.toString())}`;
 	let seltheme = ID('seltheme');
 	let selstyle = ID('selstyle');
 	ID('obscustomcss').value = customcss();
@@ -107,13 +99,13 @@ onload().then(() => {
 	if (t != null) {
 		let tt = seltheme.value = themes.some(v => v == t)
 			? t
-			: 'default';
+			: 'themedefault';
 		el.classList.add(tt);
 	}
 	if (null != s) {
 		let ss = selstyle.value = styles.some(v => v == s)
 			? s
-			: 'default';
+			: 'styledefault';
 		el.classList.add(ss);
 	}
 	if (null != u.get('hide')) ID('themechanger').style="display:none;";
@@ -123,6 +115,12 @@ onload().then(() => {
 			let rs = ID('clock');
 			let sty = selstyle.value;
 			let th = seltheme.value;
+			let param = new URLSearchParams();
+			param.append('style', sty);
+			param.append('theme', th);
+
+			let url = ID('url');
+			url.value = `${urlbase}?${param}`;
 			rs.className = `${sty} ${th}`;
 			st = sty;
 			let {width, height} = rs.getBoundingClientRect();
@@ -149,7 +147,7 @@ onload().then(() => {
 		param.append('theme', th);
 
 		let url = ID('url');
-		url.value = `${location.origin}${location.pathname.replace('debug.html', '')}?${param}`;
+		url.value = `${urlbase}?${param}`;
 		url.select();
 		document.execCommand('copy');
 	};
@@ -173,7 +171,7 @@ onload().then(() => {
 	}
 	createunit();
 	createsampleFont();
-	up(el);
+	updateTimer(el);
 });
 	</script>
 </head>
@@ -189,26 +187,31 @@ onload().then(() => {
 	regrush
 	shin
 	 -->
-	<div id="clock" class=""></div>
+	<div id="clockgrid"><div id="clock" class=""></div></div>
+	<img src="banner/yuzuru.jpeg" alt="" srcset="">
 	<div id="themechanger">
 		<div id="viewgrid" class="grid">
 			<label for="selstyle">Style:</label>
 			<select name="style" id="selstyle">
-				<option value="themedefault">default</option>
-				<option value="live"> live</option>
-				<option value="long"> long</option>
+				<option value="styledefault">default</option>
+				<option value="live">live</option>
+				<option value="long">long</option>
 			</select>
 			<label for="seltheme">Theme:</label>
 			<select name="theme" id="seltheme">
-				<option value="styledefault" checked> default</option>
-				<option value="warabe"> warabe</option>
-				<option value="lilith"> lilith</option>
-				<option value="kirara"> kirara</option>
-				<option value="momo"> momo</option>
-				<option value="nia"> nia</option>
-				<option value="iroha"> iroha</option>
-				<option value="regrush"> regrush</option>
-				<option value="shin"> shin</option>
+				<option value="themedefault" checked>default</option>
+				<option value="norio">norio</option>
+				<option value="mishiro">mishiro</option>
+				<option value="milk">milk</option>
+				<option value="yuzuru">yuzuru</option>
+				<option value="warabe">warabe</option>
+				<option value="lilith">lilith</option>
+				<option value="kirara">kirara</option>
+				<option value="momo">momo</option>
+				<option value="nia">nia</option>
+				<option value="iroha">iroha</option>
+				<option value="regrush">regrush</option>
+				<option value="shin">shin</option>
 			</select>
 		</div>
 		<div id="formgrid" class="grid">
