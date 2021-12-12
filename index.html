@@ -6,33 +6,20 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<script src="./main.js"></script>
 	<script>
-
 var st = '';
-
 onload().then(() => {
 	let u = new URLSearchParams(location.search);
 	let t = tolower(u.get('theme'));
 	let s = tolower(u.get('style'));
 	st = s;
 	let el = ID('clock');
-	if (t != null) el.classList.add(t);
-	if (s != null) el.classList.add(s);
+	if (t != null && t.length) el.classList.add(t);
+	if (s != null && s.length) el.classList.add(s);
 	updateTimer(el);
 });
 	</script>
 </head>
 <body>
-	<!--
-	class="~"
-	warabe
-	lilith
-	kirara
-	momo
-	nia
-	iroha
-	regrush
-	shin
-	 -->
 	<div id="clockgrid"><div id="clock" class=""></div></div>
 </body>
 </html>
