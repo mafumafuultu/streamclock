@@ -7,6 +7,7 @@
 	<style id="csscustom"></style>
 	<script src="./main.js"></script>
 	<script>
+
 const styles = [
 	'styledefault',
 	'live',
@@ -31,9 +32,8 @@ const customcss = (font = '', format = '', padding = '0.25rem 1.5rem 0.25rem 1.5
   font-family: 'customfont';
   src: url(${font}) format('${format}')
 }
-body {background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden;opacity: 0.8}
-#clock { font-family: 'customfont'; padding: ${padding};}
-`;
+body {background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden;}
+#clock { font-family: 'customfont'; padding: ${padding};}`;
 const samplefonts = {
 	'Roboto Mono': {
 		url: 'https://fonts.gstatic.com/s/robotomono/v13/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_AP2_ROW4.woff2',
@@ -96,13 +96,13 @@ onload().then(() => {
 	ID('obscustomcss').value = customcss();
 
 	let el = ID('clock');
-	if (t != null) {
+	if (t != null && t.length) {
 		let tt = seltheme.value = themes.some(v => v == t)
 			? t
 			: 'themedefault';
 		el.classList.add(tt);
 	}
-	if (null != s) {
+	if (null != s && s.length) {
 		let ss = selstyle.value = styles.some(v => v == s)
 			? s
 			: 'styledefault';
@@ -176,17 +176,6 @@ onload().then(() => {
 	</script>
 </head>
 <body>
-	<!--
-	class="~"
-	warabe
-	lilith
-	kirara
-	momo
-	nia
-	iroha
-	regrush
-	shin
-	 -->
 	<div id="clockgrid"><div id="clock" class=""></div></div>
 	<div id="themechanger">
 		<div id="viewgrid" class="grid">
