@@ -11,8 +11,8 @@ var st = '';
 
 onload().then(() => {
 	let u = new URLSearchParams(location.search);
-	let t = u.get('theme')?.replace(/\s/g, '').toLowerCase();
-	let s = u.get('style')?.replace(/\s/g, '').toLowerCase();
+	let t = tolower(u.get('theme'));
+	let s = tolower(u.get('style'));
 	st = s;
 	let el = ID('clock');
 	if (t != null) el.classList.add(t);

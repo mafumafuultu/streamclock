@@ -6,7 +6,7 @@ const onload = () => document.readyState !== 'complete'
 		}
 	}))
 	: Promise.resolve();
-
+const tolower = v => v == null ? '' : v.replace(/\s/g, '').toLowerCase();
 const ID = id => document.getElementById(id);
 const QU = s => document.querySelector(s);
 const time = () => {
@@ -21,6 +21,7 @@ const time = () => {
 		s: d.getSeconds().toString().padStart(2, 0),
 	};
 };
+var st = '';
 const updateTimer = el => {
 	switch(st) {
 		case "live":
