@@ -58,6 +58,7 @@ body {}
 	--daycolor: #ff8292;
 	--weekcolor: #ff8292;
 	--img: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii00MCwgLTQwLCA4MCwgODAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+IDxkZWZzPiA8cGF0aCBpZD0iaGVhcnQiIGQ9Ik0gMCwyNSBDIC0yMCw1IC0xMCwxNSAtMzAsMCBDIC00NSwtMTUgLTI1LC00NSAwLC0xNyBDIDI1LC00NSA0NSwtMTUgMzAsMCBDIDEwLDE1IDIwLDUgMCwyNSBaIiAvPiA8L2RlZnM+IDxzeW1ib2wgaWQ9ImluaGVhcnQiIHdpZHRoPSIzMCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iLTQwIC00MCA4MCA4MCIgPiA8dXNlIGhyZWY9IiNoZWFydCIgeD0iMCIgeT0iMCIgLz4gPC9zeW1ib2w+IDx1c2UgaHJlZj0iI2hlYXJ0IiB4PSIwIiB5PSIwIiBmaWxsPSIjZmQ4MzkwIiAvPiA8dXNlIGhyZWY9IiNpbmhlYXJ0IiB4PSItMTUiIHk9Ii0xNSIgZmlsbD0id2hpdGUiIC8+PC9zdmc+");
+	--img2: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0yMCwgLTIwLCA0MCwgNDAiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+IDxkZWZzPiA8cmVjdCBpZD0iciIgeD0iMC4wIiB5PSIwLjAiIHdpZHRoPSI0MC4wIiBoZWlnaHQ9IjQwLjAiIHN0cm9rZS13aWR0aD0iMCIgLz4gPC9kZWZzPiA8ZyBzdHlsZT0idHJhbnNmb3JtOnJvdGF0ZSg0NWRlZykiPiA8cmVjdCBmaWxsPSIjNDcyYzRhIiB4PSItNDAiIHk9Ii00MCIgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiAvPiA8dXNlIGhyZWY9IiNyIiBmaWxsPSIjNDcyYzRhIiB4PSItNDAuMCIgeT0iLTQwLjAiIC8+IDx1c2UgaHJlZj0iI3IiIGZpbGw9IiM0ZjQ2NzAiIHg9IjAuMCIgeT0iLTQwLjAiIC8+IDx1c2UgaHJlZj0iI3IiIGZpbGw9IiM0NzJjNGEiIHg9IjAuMCIgeT0iMC4wIiAvPiA8dXNlIGhyZWY9IiNyIiBmaWxsPSIjNGY0NjcwIiB4PSItNDAuMCIgeT0iMC4wIiAvPiA8L2c+PC9zdmc+");
 }
 .kirara {
 	--textcolor: #e13168;
@@ -147,9 +148,9 @@ body {}
 }
 #clock.warabe.live {background-position: top right 15%;}
 #clock.warabe.long {background-position: top 15% left 20%;}
-#clock.lilith {background-position: center top 65%;}
-#clock.lilith.live {background-position: top right 15%;}
-#clock.lilith.long {background-position: top 20% left 20%;}
+#clock.lilith {background: var(--img) no-repeat center top 65%, var(--img2) repeat;}
+#clock.lilith.live {background: var(--img) no-repeat top right 15%, var(--img2) repeat;}
+#clock.lilith.long {background: var(--img) no-repeat top 20% left 20%, var(--img2) repeat;}
 #clock.kirara {
 	background: var(--img) no-repeat, linear-gradient(to top right, #c3c8f0 0, #c3c8f0 30%, #f890ab 70%);
 	background-position: bottom 0 left 0;
@@ -208,7 +209,7 @@ body {}
 hr {margin: 0.2rem;border: 1px solid var(--textcolor);}
 #dayweek {font-size: 2rem; color: var(--daycolor);}
 
-#live::after {content: 'Live';top: 0;}
+#live::after {content: 'Live';top: -5%;}
 
 .text-border {
 	position:relative;
@@ -219,12 +220,12 @@ hr {margin: 0.2rem;border: 1px solid var(--textcolor);}
 	content: attr(data-txt);
 	position:absolute;
 	left: 0;
-	top: 0;
+	top: -5%;
 	text-stroke: 0px white;
 	-webkit-text-stroke: 0px white;
 }
 
-#time.text-border::after {top:unset;}
+#time.text-border::after {top: -5%;}
 
 /* for debug */
 #themechanger {
