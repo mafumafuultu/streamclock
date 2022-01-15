@@ -209,7 +209,7 @@ body {}
 hr {margin: 0.2rem;border: 1px solid var(--textcolor);}
 #dayweek {font-size: 2rem; color: var(--daycolor);}
 
-#live::after {content: 'Live';top: -5%;}
+#live::after {content: 'Live';top: 0;}
 
 .text-border {
 	position:relative;
@@ -220,12 +220,12 @@ hr {margin: 0.2rem;border: 1px solid var(--textcolor);}
 	content: attr(data-txt);
 	position:absolute;
 	left: 0;
-	top: -5%;
+	top: 0;
 	text-stroke: 0px white;
 	-webkit-text-stroke: 0px white;
 }
 
-#time.text-border::after {top: -5%;}
+#time.text-border::after {top: 0;}
 
 /* for debug */
 #themechanger {
