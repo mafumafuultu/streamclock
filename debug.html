@@ -28,12 +28,15 @@ const themes = [
 	'regrush',
 	'shin',
 ];
-const customcss = (font = '', format = '', padding = '0.25rem 1.5rem 0.25rem 1.5rem') => `@font-face {
+const customcss = (font = '', format = '', padding = '0.25rem 1.5rem 0.25rem 1.5rem', posTime='0px', posDay='0px', posLive='0px') => `@font-face {
   font-family: 'customfont';
   src: url(${font}) format('${format}')
 }
 body {background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden;}
-#clock { font-family: 'customfont'; padding: ${padding};}`;
+#clock { font-family: 'customfont'; padding: ${padding};}
+#time::after {top: ${posTime} !important;}
+#day::after {top: ${posDay} !important;}
+#live::after {top: ${posLive} !important;}`;
 const samplefonts = {
 	'Roboto Mono': {
 		url: 'https://fonts.gstatic.com/s/robotomono/v13/L0xuDF4xlVMF-BfR8bXMIhJHg45mwgGEFl0_AP2_ROW4.woff2',
@@ -164,8 +167,11 @@ onload().then(() => {
 			t = ID('fontpadding-top').value + QU('#fontpadding-top + select').value,
 			r = ID('fontpadding-right').value + QU('#fontpadding-right + select').value,
 			b = ID('fontpadding-bottom').value + QU('#fontpadding-bottom + select').value,
-			l = ID('fontpadding-left').value + QU('#fontpadding-left + select').value;
-		var txt = customcss(fpath.value, fformat.value, `${t} ${r} ${b} ${l}`);
+			l = ID('fontpadding-left').value + QU('#fontpadding-left + select').value,
+			tol = ID('timeoutline').value + QU('#timeoutline + select').value,
+			dol = ID('dayoutline').value + QU('#dayoutline + select').value,
+			lol = ID('liveoutline').value + QU('#liveoutline + select').value;
+		var txt = customcss(fpath.value, fformat.value, `${t} ${r} ${b} ${l}`, tol, dol, lol );
 		ID('obscustomcss').value = txt;
 		ID('csscustom').textContent = txt;
 	}
@@ -229,6 +235,14 @@ onload().then(() => {
 					<label for="fontpadding-right">right:</label><input type="number" name="" id="fontpadding-right" value="1.5"><select class="selectunit"></select>
 					<label for="fontpadding-bottom">bottom:</label><input type="number" name="" id="fontpadding-bottom" value="0.25"><select class="selectunit"></select>
 					<label for="fontpadding-left">left:</label><input type="number" name="" id="fontpadding-left" value="1.5"><select class="selectunit"></select>
+				</div>
+				<div>
+					<label for="">text outline position</label>
+					<div id="outlineposition" class="grid">
+						<label for="timeoutline">time:</label><input type="number" name="" id="timeoutline" value="0"><select class="selectunit"></select>
+						<label for="dayoutline">live:</label><input type="number" name="" id="dayoutline" value="0"><select class="selectunit"></select>
+						<label for="liveoutline">live:</label><input type="number" name="" id="liveoutline" value="0"><select class="selectunit"></select>
+					</div>
 				</div>
 			</div>
 			<textarea name="" id="obscustomcss" >body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden;opacity: 0.8}</textarea>
