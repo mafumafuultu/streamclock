@@ -290,7 +290,9 @@ input[type=number]:hover {
 }
 summary {padding: 0.5rem;}
 #fontsamples {}
+#outlineposition,
 #custompadding {grid-template-columns: max-content 100px 100px;}
+#outlineposition select ,
 #custompadding select {width: 100px;}
 
 ::-webkit-scrollbar{
